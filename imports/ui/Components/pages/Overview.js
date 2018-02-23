@@ -7,6 +7,11 @@ import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 
 import VitalBlock from '../widgets/VitalBlock';
+import ProjectLinks from '../widgets/ProjectLinks';
+import ProductionBlock from '../widgets/ProductionBlock';
+import TimesBlock from '../widgets/TimesBlock';
+import MembersBlock from '../widgets/MembersBlock';
+import IssueTrackingBlock from '../widgets/IssueTrackingBlock';
 
 const styles = theme => ({
   root: {
@@ -36,9 +41,13 @@ class Overview extends React.Component {
           <Grid item xs={1}></Grid>
           <Grid item xs={6}>
             <VitalBlock />
+            <ProjectLinks />
+            <ProductionBlock />
           </Grid>
           <Grid item xs={4}>
-            <Paper className={classes.paper}>xs=9</Paper>
+            <TimesBlock />
+            <MembersBlock />
+            <IssueTrackingBlock />
           </Grid>
           <Grid item xs={1}></Grid>
         </Grid>

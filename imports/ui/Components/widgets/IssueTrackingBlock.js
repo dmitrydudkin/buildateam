@@ -24,34 +24,16 @@ const styles = theme => ({
   }
 });
 
-class VitalBlock extends React.Component {
+class IssueTrackingBlock extends React.Component {
   render() {
     const { classes } = this.props;
-
-    const title = "Build a Team"
-    const tag = <Chip label="New project" />
-    const subheader = (
-      <div>
-        {tag}
-        Due to: 01 JAN 2017
-      </div>
-    )
 
     return (
       <div>
         <Card className={classes.card}>
-          <CardHeader
-            action={
-              <IconButton>
-                <Create />
-              </IconButton>
-            }
-            title={title}
-            subheader={subheader}
-          />
           <CardContent>
             <Typography component="p">
-              Content....
+              Issue Tracking ....
             </Typography>
           </CardContent>
         </Card>
@@ -60,8 +42,8 @@ class VitalBlock extends React.Component {
   }
 }
 
-VitalBlock.propTypes = {
+IssueTrackingBlock.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(VitalBlock);
+export default withStyles(styles)(IssueTrackingBlock);
