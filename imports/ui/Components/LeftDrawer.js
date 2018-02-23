@@ -72,12 +72,7 @@ class LeftDrawer extends React.Component {
             <ListItemText inset primary="Kickstagram" />
           </ListItem>
         </List>
-        <List>2</List>
-        <List>3</List>
         <Divider />
-        <List>4</List>
-        <List>5</List>
-        <List>6</List>
       </Drawer>
     );
   }

@@ -10,6 +10,8 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import Button from 'material-ui/Button';
 
+import { Link } from "react-router-dom";
+
 const drawerWidth = 240;
 
 const styles = {
@@ -61,8 +63,8 @@ class AppBarComponent extends React.Component {
             <Button color="inherit">Search</Button>
           </Toolbar>
           <Tabs value={value} onChange={this.handleChange}>
-            <Tab label="Overview"  href="#basic-tabs" />
-            <Tab label="Tasks" />
+            <Tab label="Overview" component={Link} to="/" />
+            <Tab label="Tasks" component={Link} to="/tasks" />
             <Tab label="Progress"/>
             <Tab label="Project integrations"/>
           </Tabs>

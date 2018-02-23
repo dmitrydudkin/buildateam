@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
@@ -14,6 +15,8 @@ import Divider from 'material-ui/Divider';
 import AppBar from '../Components/AppBar';
 import LeftDrawer from '../Components/LeftDrawer';
 import RightDrawer from '../Components/RightDrawer';
+import Overview from '../Components/Overview';
+import Tasks from '../Components/Tasks';
 
 const drawerWidth = 240;
 
@@ -59,16 +62,21 @@ class Layout extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-        <div className={classes.appFrame}>
-          <AppBar />
-          <LeftDrawer />
-          <main className={classes.content}>
-            <Typography>{'content here'}</Typography>
-          </main>
-          <RightDrawer />
+      <Router>
+        <div className={classes.root}>
+          <div className={classes.appFrame}>
+            <AppBar />
+            <LeftDrawer />
+            <main className={classes.content}>
+              <Switch>
+                <Route exact path="/" component={Overview} />
+                <Route exact path="/tasks" component={Tasks} />
+              </Switch>
+            </main>
+            <RightDrawer />
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
