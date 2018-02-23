@@ -13,6 +13,7 @@ import Divider from 'material-ui/Divider';
 
 import AppBar from '../Components/AppBar';
 import LeftDrawer from '../Components/LeftDrawer';
+import RightDrawer from '../Components/RightDrawer';
 
 const drawerWidth = 240;
 
@@ -40,20 +41,6 @@ const styles = theme => ({
     marginRight: drawerWidth,
   },
 
-  rightDrawerPaper: {
-    position: 'relative',
-    height: '100%',
-    width: 100,
-    marginTop: 112
-  },
-
-  rigthDrawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
   content: {
     backgroundColor: theme.palette.background.default,
     width: '100%',
@@ -77,19 +64,9 @@ class Layout extends React.Component {
           <AppBar />
           <LeftDrawer />
           <main className={classes.content}>
-            <Typography>{'You think water moves fast? You should see ice.'}</Typography>
+            <Typography>{'content here'}</Typography>
           </main>
-          <Drawer
-            variant="permanent"
-            classes={{
-              paper: classes.rightDrawerPaper,
-            }}
-            anchor="right"
-          >
-            <div className={classes.rigthDrawerHeader} />
-            <Divider />
-            <List>Elnora</List>
-          </Drawer>
+          <RightDrawer />
         </div>
       </div>
     );
