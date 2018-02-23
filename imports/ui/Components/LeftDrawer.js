@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Drawer from 'material-ui/Drawer';
+import Collapse from 'material-ui/transitions/Collapse';
+import ViewQuilt from 'material-ui-icons/ViewQuilt';
+import FiberManualRecord from 'material-ui-icons/FiberManualRecord';
+
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import ListSubheader from 'material-ui/List/ListSubheader';
 
 import Divider from 'material-ui/Divider';
 import SendIcon from 'material-ui-icons/Send';
@@ -14,7 +17,8 @@ import { withStyles } from 'material-ui/styles';
 const drawerWidth = 240;
 
 const styles = theme => {
-  console.log(theme.palette);
+  // FIXIT: remove after debug
+  // console.log(theme.palette);
   return {
     drawerPaper: {
       position: 'relative',
@@ -24,11 +28,16 @@ const styles = theme => {
     drawerHeader: {
       backgroundColor: theme.palette.primary.main,
       height: 110
+    },
+    nested: {
+      paddingLeft: theme.spacing.unit * 4,
     }
   }
 };
 
 class LeftDrawer extends React.Component {
+  state = { open: true };
+
   render() {
 
     const { classes } = this.props;
@@ -43,14 +52,24 @@ class LeftDrawer extends React.Component {
       >
         <div className={classes.drawerHeader} />
         <Divider />
-        <List subheader={
-          <ListSubheader component="div">Projects Dashboard</ListSubheader>
-        }>
+        <List>
           <ListItem button>
             <ListItemIcon>
-              <SendIcon />
+              <ViewQuilt />
             </ListItemIcon>
-            <ListItemText inset primary="Sent mail" />
+            <ListItemText inset primary="Projects Dashboard" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon color="error">
+              <FiberManualRecord />
+            </ListItemIcon>
+            <ListItemText inset primary="Buildateam" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <FiberManualRecord />
+            </ListItemIcon>
+            <ListItemText inset primary="Kickstagram" />
           </ListItem>
         </List>
         <List>2</List>
