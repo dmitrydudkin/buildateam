@@ -8,6 +8,7 @@ import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-
 
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
+import Input from 'material-ui/Input';
 
 import Create from 'material-ui-icons/Create';
 
@@ -33,8 +34,9 @@ class ProjectLinks extends React.Component {
         <Card className={classes.card}>
           <CardContent>
             <Typography component="p">
-              Links....
+              Project Google Drive Folder Link
             </Typography>
+            <Input />
           </CardContent>
         </Card>
       </div>

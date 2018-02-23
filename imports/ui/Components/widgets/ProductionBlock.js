@@ -27,10 +27,19 @@ const styles = theme => ({
 class ProductionBlock extends React.Component {
   render() {
     const { classes } = this.props;
+    const title = "Production"
 
     return (
       <div>
         <Card className={classes.card}>
+          <CardHeader
+            action={
+              <IconButton>
+                <Create />
+              </IconButton>
+            }
+            title={title}
+          />
           <CardContent>
             <Typography component="p">
               Production....
