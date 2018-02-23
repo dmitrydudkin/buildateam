@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import Badge from 'material-ui/Badge';
 import Drawer from 'material-ui/Drawer';
-import Collapse from 'material-ui/transitions/Collapse';
-import ViewQuilt from 'material-ui-icons/ViewQuilt';
-import FiberManualRecord from 'material-ui-icons/FiberManualRecord';
+import Avatar from 'material-ui/Avatar';
+
+import Message from 'material-ui-icons/Message';
 
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 
@@ -32,10 +33,7 @@ const styles = theme => ({
 });
 
 class RightDrawer extends React.Component {
-  state = { open: true };
-
   render() {
-
     const { classes } = this.props;
 
     return (
@@ -46,9 +44,25 @@ class RightDrawer extends React.Component {
         }}
         anchor="right"
       >
-        <div className={classes.rigthDrawerHeader} />
-        <Divider />
-        <List>Elnora</List>
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <Message />
+            </ListItemIcon>
+          </ListItem>
+          <Divider />
+          <ListItem>
+            <Badge badgeContent={1} color="secondary">
+              <Avatar src="http://lorempixel.com/100/100/people" />
+            </Badge>
+          </ListItem>
+          <ListItem>
+            <Avatar src="http://lorempixel.com/100/100/people" />
+          </ListItem>
+          <ListItem>
+            <Avatar src="http://lorempixel.com/100/100/people" />
+          </ListItem>
+        </List>
       </Drawer>
     );
   }
