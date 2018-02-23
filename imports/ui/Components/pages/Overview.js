@@ -6,7 +6,7 @@ import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 
-import VitalBlock from './VitalBlock';
+import VitalBlock from '../widgets/VitalBlock';
 
 const styles = theme => ({
   root: {

@@ -13,10 +13,10 @@ import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 
 import AppBar from '../Components/AppBar';
-import LeftDrawer from '../Components/LeftDrawer';
-import RightDrawer from '../Components/RightDrawer';
-import Overview from '../Components/Overview';
-import Tasks from '../Components/Tasks';
+import LeftDrawer from '../Components/drawers/LeftDrawer';
+import RightDrawer from '../Components/drawers/RightDrawer';
+import Overview from '../Components/pages/Overview';
+import Tasks from '../Components/pages/Tasks';
 
 const drawerWidth = 240;
 
