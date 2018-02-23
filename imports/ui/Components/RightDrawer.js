@@ -35,6 +35,14 @@ const styles = theme => ({
 class RightDrawer extends React.Component {
   render() {
     const { classes } = this.props;
+    const avatars = [];
+
+    for (let i = 0; i < 4; i++)
+      avatars.push(
+        <ListItem key={i}>
+          <Avatar src="http://lorempixel.com/100/100/people" />
+        </ListItem>
+      )
 
     return (
       <Drawer
@@ -56,12 +64,7 @@ class RightDrawer extends React.Component {
               <Avatar src="http://lorempixel.com/100/100/people" />
             </Badge>
           </ListItem>
-          <ListItem>
-            <Avatar src="http://lorempixel.com/100/100/people" />
-          </ListItem>
-          <ListItem>
-            <Avatar src="http://lorempixel.com/100/100/people" />
-          </ListItem>
+          { avatars }
         </List>
       </Drawer>
     );
