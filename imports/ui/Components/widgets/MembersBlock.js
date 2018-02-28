@@ -61,6 +61,7 @@ class MembersBlock extends React.Component {
         <Card className={classes.card}>
           <CardContent>
             <CardHeader
+              title="Members"
               action={
                 (<div><IconButton>
                   <Share />
@@ -71,9 +72,6 @@ class MembersBlock extends React.Component {
                 )
               }
             />
-            <Typography variant="title">
-              Members
-            </Typography>
             <Table>
               <TableHead>
                 <TableRow>
